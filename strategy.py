@@ -5,7 +5,7 @@ The Strategy Design Pattern is a behavioral design pattern that defines a family
 from typing import Type
 from abc import ABC, abstractmethod
 
-class PaymentStrategy:
+class PaymentStrategy(ABC):
     @abstractmethod
     def pay(self, amount: float) -> None:
         pass
