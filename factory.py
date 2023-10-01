@@ -17,12 +17,12 @@ class Cat(Animal):
         return "Meow"
     
 class AnimalFactory:
-    def create_animal(self, animal_type):
+    @classmethod
+    def create_animal(cls, animal_type):
         try:
             return eval(animal_type)().speak()
         except Exception as e:
             raise ValueError(f"Animal Type '{animal_type}' is not supported! - {e}")
 
 
-animalFactory = AnimalFactory()
-print(animalFactory.create_animal("Pig"))
+print(AnimalFactory.create_animal("Dog"))
